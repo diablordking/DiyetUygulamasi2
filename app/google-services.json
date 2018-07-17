@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "491666656798",
+    "firebase_url": "https://diex-549ad.firebaseio.com",
+    "project_id": "diex-549ad",
+    "storage_bucket": "diex-549ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491666656798:android:ce3230b4a76a5c03",
+        "android_client_info": {
+          "package_name": "com.example.statistic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491666656798-ip99haae986gcpfo05l0omrch2d8f306.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.statistic",
+            "certificate_hash": "47cf1b5b49743130451a8d33355174db685400ef"
+          }
+        },
+        {
+          "client_id": "491666656798-v9nalsj470c84cnlc5hv2fkcvesjlrba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7tzS8lYlWBnxBP2TjBDGJ_TzWcIb3POo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491666656798-v9nalsj470c84cnlc5hv2fkcvesjlrba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

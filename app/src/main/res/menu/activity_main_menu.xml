@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/take_photo"
+        android:icon="@drawable/common_google_signin_btn_icon_dark"
+        android:title="Take Photo"
+        app:showAsAction="ifRoom" />
+</menu>

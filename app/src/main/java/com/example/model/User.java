@@ -6,9 +6,9 @@ public class User {
     private String name;
     private String surname;
     private String email;
-    private int weight = 60;
-    private int height = 70;
-    private int age = 20;
+    private String weight = "65";
+    private String height = "70";
+    private String age = "22";
 
 
     public String getEmail() {
@@ -24,15 +24,15 @@ public class User {
         this.surname = surname;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -41,21 +41,21 @@ public class User {
         return surname;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
 
 
-    public User(String id, String s, String toString) {
+    public User() {
 
     }
 
@@ -77,7 +77,7 @@ public class User {
     }
 
 
-    public User(String id, String email, int weight, int height, int age) {
+    public User(String id, String email, String weight, String height, String age) {
         this.id = id;
         this.email = email;
         this.weight = weight;
@@ -85,7 +85,7 @@ public class User {
         this.age = age;
     }
 
-    public User(String id, String name, String surname, String email, int weight, int height, int age) {
+    public User(String id, String name, String surname, String email, String weight, String height, String age) {
         this.id = id;
         this.name = name;
         this.surname = surname;

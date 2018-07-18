@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.R;
 import com.example.model.Dater;
@@ -39,7 +40,18 @@ public class profil extends Fragment {
     private String mParam1;
     private String mParam2;
     private DatabaseReference databaseReferenceCustomers;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    TextView sabahtext,ogletext,aksamtext,durum,ideal;
+    User a;
+    int boy=180;
+    int yas = 23;
+    int kilo =50;
+    double idealKilo;
+    int Mevcutkalori; // Mevcut kiloyu korumak için gerekli kalori miktarı
+
+    int idealKiloAraligi1;
+    int idealKiloAraligi2;
+    double kitleEndeks;
 
 
     private OnFragmentInteractionListener mListener;
@@ -48,14 +60,7 @@ public class profil extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment profil.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static profil newInstance(String param1, String param2) {
         profil fragment = new profil();
@@ -75,18 +80,60 @@ public class profil extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-
-        databaseReferenceCustomers = FirebaseDatabase.getInstance().getReference("user").child(mAuth.getUid());
+    public void kalori() {
+        databaseReferenceCustomers = FirebaseDatabase.getInstance().getReference("users");
 
         databaseReferenceCustomers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User a =dataSnapshot.getValue(User.class);
+                for (DataSnapshot myDatasnaphot : dataSnapshot.getChildren()) {
+                    a = myDatasnaphot.getValue(User.class);
+
+                    String ab = a.getId();
+                    String b = mAuth.getUid();
+                    if (ab.equals(b)) {
+                        kilo = Integer.parseInt(a.getWeight());
+                        boy = Integer.parseInt(a.getHeight());
+                        yas = Integer.parseInt(a.getAge());
+
+
+                        idealKilo= (50 + (2.3 / 2.54) * (boy - 152.4));
+                        idealKilo=(double)Math.round(idealKilo * 10d) / 10d;
+                        Mevcutkalori= (int)(1.35*(float)((10*kilo)+(int)(6.25*(float)boy)-(5*yas)+5));
+
+                        ideal.setText("İdeal Kilonuz:"+idealKilo);
+
+                        idealKiloAraligi1=(int)idealKilo-11;
+                        idealKiloAraligi2=(int)idealKilo+11;
+                        kitleEndeks=kilo/(((float)boy/100)*((float)boy/100));
+                        kitleEndeks=(double)Math.round(kitleEndeks * 10d) / 10d;
+                        if(kitleEndeks>16 && kitleEndeks <18.5) {
+                            durum.setText("Zayıfsın kilo alman gerek");
+
+                            sabahtext.setText(R.string.dSabah );
+                            ogletext.setText(R.string.dOgle );
+                            aksamtext.setText(R.string.dAksam );
+
+
+                        }
+                        else if(kitleEndeks>=18.5 && kitleEndeks <30) {
+                            durum.setText("İdeal Kilodasın.");
+                            sabahtext.setText(R.string.nSabah );
+                            ogletext.setText(R.string.nOgle );
+                            aksamtext.setText(R.string.nAksam );
+                        }
+                        else if(kitleEndeks>=30) {
+                            durum.setText("Acillen Yemeği Bırakman lazım.");
+                            sabahtext.setText(R.string.sSabah );
+                            ogletext.setText(R.string.sOgle );
+                            aksamtext.setText(R.string.sAksam );
+                        }
+
+
+                    }
+
+                }
+
 
             }
 
@@ -96,8 +143,30 @@ public class profil extends Fragment {
             }
         });
 
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View RootView = inflater.inflate(R.layout.fragment_profil, container, false);
+
+
+        sabahtext = RootView.findViewById(R.id.idSabah);
+
+        ogletext = RootView.findViewById(R.id.idOgle);
+
+        aksamtext = RootView.findViewById(R.id.idAksam);
+
+        durum = RootView.findViewById(R.id.durum);
+
+        ideal = RootView.findViewById(R.id.ideal);
+
+        kalori();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false);
+        return RootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -10,10 +10,12 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.R;
 import com.example.model.Dater;
 import com.example.model.Report;
+import com.example.model.User;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
@@ -66,6 +68,8 @@ public class stats extends Fragment {
     private DatabaseReference databaseReferenceCustomers;
     private FirebaseAuth mAuth;
     private OnFragmentInteractionListener mListener;
+    TextView t1,t2;
+    User u1;
     SimpleDateFormat sdf = new SimpleDateFormat("dd:mm:yyyy");
 
     public stats() {
@@ -93,6 +97,36 @@ public class stats extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+    public void weightAge() {
+        databaseReferenceCustomers = FirebaseDatabase.getInstance().getReference("users");
+        databaseReferenceCustomers.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot myDatasnaphot : dataSnapshot.getChildren()) {
+
+                    u1  = myDatasnaphot.getValue(User.class);
+
+                    String a = u1.getId().toString();
+                    String b = mAuth.getUid().toString();
+    
+
+                    if (a.equals(b) ) {
+                        t1.setText(u1.getHeight());
+                        t2.setText(u1.getWeight());
+                        break;
+                    }
+
+                }
+                }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
@@ -142,7 +176,13 @@ public class stats extends Fragment {
         mAuth = FirebaseAuth.getInstance();
 
         databaseReferenceCustomers = databaseReferenceCustomers.child(mAuth.getUid());
+        t1 = RootView.findViewById(R.id.textView66);
+        t2 = RootView.findViewById(R.id.textView8);
+
         onStart();
+        weightAge();
+
+
         graph.getGridLabelRenderer().setNumHorizontalLabels(3);
         graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
             @Override

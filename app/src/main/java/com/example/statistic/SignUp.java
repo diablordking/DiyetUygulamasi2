@@ -114,7 +114,7 @@ public class SignUp extends AppCompatActivity {
                                 } else {
                                     databaseReferenceCustomers = FirebaseDatabase.getInstance().getReference("users");
                                     String id = auth.getUid();
-                                    User user = new User(id,inputEmail.getText().toString(),Integer.parseInt(inputweight.getText().toString()),Integer.parseInt(inputheight.getText().toString()),Integer.parseInt(inputage.getText().toString()));
+                                    User user = new User(id,inputEmail.getText().toString(),inputweight.getText().toString(),inputheight.getText().toString(),inputage.getText().toString());
                                     databaseReferenceCustomers.child(id).setValue(user);
 
                                     Date date = new Date();

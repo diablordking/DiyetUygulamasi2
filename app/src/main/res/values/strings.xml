@@ -51,4 +51,67 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+
+
+
+    <string name="nSabah">Az yağlı beyaz peynir ( 2 dilim ) \n
+Haşlanmış yumurta ( 1 adet ) \n
+Zeytin ( 5 adet ) \n
+Kepek ekmeği ( 2 dilim ) \n
+Domates ( 1 adet ) \n
+Salatalık ( 1 adet )</string>
+
+    <string name="nOgle">Izgara ya da buğulama balık ( 300 gram ) \n
+Bulgur pilavı ( 5 yemek kaşığı ) \n
+Yağsız salata ( 1 kase )  \n
+Kepek ekmeği ( 2 dilim )</string>
+
+
+    <string name="nAksam">Izgara ya da buğulama balık ( 300 gram ) \n
+Bulgur pilavı ( 5 yemek kaşığı ) \n
+Yağsız salata ( 1 kase )  \n
+Kepek ekmeği ( 2 dilim )</string>
+
+
+
+    <string name="dSabah">
+2 su bardağı az yağlı süt \n
+1tatlı kaşığı vanilyalı protein tozu \n
+1/2 su bardağı yulaf ezmesi (kaynar suda haşlanmış)\n
+1 küçük muz
+1 yemek kaşığı bal
+</string>
+
+    <string name="dOgle">1 pişmiş patates\n
+Konserve ton balığı 150 gram\n
+Düşük yağlı soslu salata\n
+Portakal suyu 1 bardak</string>
+
+
+    <string name="dAksam">Pişmiş beyaz pirinç 2 su bardağı\n
+Izgara balık 100 gram\n
+Pişmiş sebze 1/2 bardak\n
+1 bardak su</string>
+
+
+
+    <string name="sSabah">Az yağlı beyaz peynir ( 2 dilim ) \n
+Haşlanmış yumurta ( 1 adet ) \n
+Zeytin ( 5 adet ) \n
+Kepek ekmeği ( 2 dilim ) \n
+Domates ( 1 adet ) \n
+Salatalık ( 1 adet )</string>
+
+    <string name="sOgle">Izgara ya da buğulama balık ( 300 gram ) \n
+Bulgur pilavı ( 5 yemek kaşığı ) \n
+Yağsız salata ( 1 kase )  \n
+Kepek ekmeği ( 2 dilim )</string>
+
+
+    <string name="sAksam">Izgara ya da buğulama balık ( 300 gram ) \n
+Bulgur pilavı ( 5 yemek kaşığı ) \n
+Yağsız salata ( 1 kase )  \n
+Kepek ekmeği ( 2 dilim )</string>
+
+
 </resources>

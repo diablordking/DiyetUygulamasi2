@@ -20,7 +20,7 @@ App is targeted to people of any age:
  
 ### Features:
 
-    - Measures daily fitness
+    - Google Login (Soon)
     - Graphical Statistics
     - Record Daily Food Activity
  
@@ -40,4 +40,4 @@ App is targeted to people of any age:
     -Hosting data to cloud (firebase)
     -Real API Data
     -Parsing JSON Data
-    -Image image recognition
+    -Image recognition

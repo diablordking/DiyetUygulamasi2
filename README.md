@@ -22,7 +22,8 @@ App is targeted to people of any age:
 
     - Google Login (Soon)
     - Graphical Statistics
-    - Record Daily Food Activity
+    - Record Daily Food
+    - Medical News
  
 ### Application Uses:
 
